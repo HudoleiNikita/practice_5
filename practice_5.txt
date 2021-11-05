@@ -1,0 +1,65 @@
+1.
+s=dict(a=1,b=2,c=3,d=4,f=5,h=6,k=7)
+n=int(input('введите число '))
+for i in s:
+    def f():
+        if s[i]>n:
+            return s[i]
+    print(f())
+3.
+i = input().split()
+print(i[0][0], i[1][0]+"."+i[2][0]+".")
+2.
+import random
+
+
+def main():
+matrix = [[random.randint(1, 9) for i in range(3)] for j in range(3)]
+print (matrix)
+result = LoShu(matrix)
+
+print(result)
+def LoShu(matrix):
+
+
+row1 = matrix[0][0] + matrix[0][1] + matrix[0][2]
+row2 = matrix[1][0] + matrix[1][1] + matrix[1][2]
+row3 = matrix[2][0] + matrix[2][1] + matrix[2][2]
+
+ver1 = matrix[0][0] + matrix[1][0] + matrix[2][0]
+ver2 = matrix[0][1] + matrix[1][1] + matrix[2][1]
+ver3 = matrix[0][2] + matrix[1][2] + matrix[2][2]
+
+diag1 = matrix[0][0] + matrix[1][1] + matrix[2][2]
+diag2 = matrix[0][2] + matrix[1][1] + matrix[2][0]
+
+checkList = [row1,row2,row3,ver1,ver2,ver3,diag1,diag2]
+
+temp = checkList[0]
+
+for x in range (0, len(checkList)):
+if checkList[x] != temp:
+return ("не квадрат Ло Шу")
+
+return ("квадрат Ло Шу")
+5.
+def f(mystr):
+   mystr = mystr.lower()
+   a = 0
+   b = 0
+   for c in mystr:
+        if c in 'aeiou':
+            a += 1
+        elif c >= 'a' and c <= 'z':
+            b += 1
+   return a, b
+
+
+mystr = input('введите строку on English: ')
+a, b = f(mystr)
+print('кол-во гласных',a,'кол-во согласных',b)
+
+
+
+
+main() 
